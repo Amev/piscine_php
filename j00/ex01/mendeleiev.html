@@ -1,0 +1,992 @@
+<!-- *********************************************************************** -->
+<!--                                                                         -->
+<!--                                                      :::      ::::::::  -->
+<!-- mendeleiev.html                                    :+:      :+:    :+:  -->
+<!--                                                  +:+ +:+         +:+    -->
+<!-- By: vame <vame@student.42.fr>                  +#+  +:+       +#+       -->
+<!--                                              +#+#+#+#+#+   +#+          -->
+<!-- Created: 2015/04/06 13:10:56 by vame              #+#    #+#            -->
+<!-- Updated: 2015/04/06 18:08:46 by vame             ###   ########.fr      -->
+<!--                                                                         -->
+<!-- *********************************************************************** -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Mendeleiev - Table periodique des elements</title>
+		<style>
+
+			body {
+				font-size: 1vh;
+			}
+
+			table {
+				width: 100%;
+			}
+
+			td {
+				background-color: DarkGray;
+				border: 1px solid black;
+				width: 5.55%;
+				padding: 0px;
+				margin: 0px;
+			}
+
+			img {
+				display: block;
+				width: 100%;
+			}
+
+			#H, #C, #N, #O, #P, #S, #Se {
+				background-color: SpringGreen;
+			}
+
+			#Be, #Mg, #Ca, #Sr, #Ba, #Ra {
+				background-color: Tomato;
+			}
+
+			#Li, #Na, #K, #Rb, #Cs, #Fr {
+				background-color: Gold;
+			}
+
+			#He, #Ne, #Ar, #Kr, #Xe, #Rn, #Uuo {
+				background-color: GreenYellow;
+			}
+
+			#F, #Cl, #Br, #I, #At, #Uus {
+				background-color: SlateBlue;
+			}
+
+			#B, #Si, #Ge, #As, #Sb, #Te, #Po {
+				background-color: Yellow;
+			}
+
+			#Al, #Ga, #In, #Sn, #Tl, #Pb, #Bi, #Uut, #Uuq, #Uup, #Uuh {
+				background-color: Turquoise;
+			}
+
+			#La, #Ce, #Pr, #Nd, #Pm, #Sm, #Eu, #Gd, #Tb, #Dy, #Ho, #Er, #Tm, #Yb, #Lu {
+				background-color: Violet;
+			}
+
+			#Ac, #Th, #Pa, #U, #Np, #Pu, #Am, #Cm, #Bk, #Cf, #Es, #Fm, #Md, #No, #Lr {
+				background-color: DodgerBlue;
+			}
+
+			.vide {
+				background-color: white;
+				border: 0px;
+			}
+
+			.name {
+				padding: 0px;
+				margin: 0px;
+				margin-bottom: 2px;
+				color: white;
+				text-align: center;
+				background-color: black;
+				opacity: 0.70;
+			}
+
+			.number {
+				margin: 0px;
+				font-weight: bold;
+				padding: 0px 2px;
+			}
+
+			.masse {
+				margin: 0px;
+				text-align: right;
+				font-style: italic;
+				padding: 0px 2px;
+			}
+
+			.symbol {
+				text-align: center;
+				font-weight: bold;
+				font-size: 150%;
+			}
+
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr id="ligne1">
+
+				<td id="H">
+					<p class="name">Hydrogene</p>
+					<p class="masse">1,00794</p>
+					<p class="symbol">H</p>
+					<p class="number">1</p>
+				</td>
+
+				<td class="vide" colspan="16"></td>
+
+				<td id="He">
+					<p class="name">Helium</p>
+					<p class="masse">4,0026</p>
+					<p class="symbol">He</p>
+					<p class="number">2</p>
+				</td>
+
+			</tr>
+			<tr id="ligne2">
+
+				<td id="Li">
+					<p class="name">Lithium</p>
+					<p class="masse">6,941</p>
+					<p class="symbol">Li</p>
+					<p class="number">3</p>
+				</td>
+
+				<td id="Be">
+					<p class="name">Beryllium</p>
+					<p class="masse">9,01218</p>
+					<p class="symbol">Be</p>
+					<p class="number">4</p>
+				</td>
+
+				<td class="vide" colspan="10"></td>
+
+				<td id="B">
+					<p class="name">Bore</p>
+					<p class="masse">10,811</p>
+					<p class="symbol">B</p>
+					<p class="number">5</p>
+				</td>
+
+				<td id="C">
+					<p class="name">Carbone</p>
+					<p class="masse">12,0107</p>
+					<p class="symbol">C</p>
+					<p class="number">6</p>
+				</td>
+
+				<td id="N">
+					<p class="name">Azote</p>
+					<p class="masse">14,0067</p>
+					<p class="symbol">N</p>
+					<p class="number">7</p>
+				</td>
+
+				<td id="O">
+					<p class="name">Oxygene</p>
+					<p class="masse">15,9994</p>
+					<p class="symbol">O</p>
+					<p class="number">8</p>
+				</td>
+
+				<td id="F">
+					<p class="name">Fluor</p>
+					<p class="masse">18,9984</p>
+					<p class="symbol">F</p>
+					<p class="number">9</p>
+				</td>
+
+				<td id="Ne">
+					<p class="name">Neon</p>
+					<p class="masse">20,1797</p>
+					<p class="symbol">Ne</p>
+					<p class="number">10</p>
+				</td>
+
+			</tr>
+			<tr id="ligne3">
+
+				<td id="Na">
+					<p class="name">Sodium</p>
+					<p class="masse">22,9898</p>
+					<p class="symbol">Na</p>
+					<p class="number">11</p>
+				</td>
+
+				<td id="Mg">
+					<p class="name">Magnesium</p>
+					<p class="masse">24,305</p>
+					<p class="symbol">Mg</p>
+					<p class="number">12</p>
+				</td>
+
+				<td class="vide" colspan="10"></td>
+
+				<td id="Al">
+					<p class="name">Aluminium</p>
+					<p class="masse">26,9815</p>
+					<p class="symbol">Al</p>
+					<p class="number">13</p>
+				</td>
+
+				<td id="Si">
+					<p class="name">Silicium</p>
+					<p class="masse">28,0855</p>
+					<p class="symbol">Si</p>
+					<p class="number">14</p>
+				</td>
+
+				<td id="P">
+					<p class="name">Phosphore</p>
+					<p class="masse">30,9738</p>
+					<p class="symbol">P</p>
+					<p class="number">15</p>
+				</td>
+
+				<td id="S">
+					<p class="name">Soufre</p>
+					<p class="masse">32,065</p>
+					<p class="symbol">S</p>
+					<p class="number">16</p>
+				</td>
+
+				<td id="Cl">
+					<p class="name">Chlore</p>
+					<p class="masse">35,453</p>
+					<p class="symbol">Cl</p>
+					<p class="number">17</p>
+				</td>
+
+				<td id="Ar">
+					<p class="name">Argon</p>
+					<p class="masse">39,948</p>
+					<p class="symbol">Ar</p>
+					<p class="number">18</p>
+				</td>
+
+			</tr>
+			<tr id="ligne4">
+
+				<td id="K">
+					<p class="name">Potassium</p>
+					<p class="masse">39,0983</p>
+					<p class="symbol">K</p>
+					<p class="number">19</p>
+				</td>
+
+				<td id="Ca">
+					<p class="name">Calcium</p>
+					<p class="masse">40,078</p>
+					<p class="symbol">Ca</p>
+					<p class="number">20</p>
+				</td>
+
+				<td id="Sc">
+					<p class="name">Scandium</p>
+					<p class="masse">44,9559</p>
+					<p class="symbol">Sc</p>
+					<p class="number">21</p>
+				</td>
+
+				<td id="Ti">
+					<p class="name">Titane</p>
+					<p class="masse">47,867</p>
+					<p class="symbol">Ti</p>
+					<p class="number">22</p>
+				</td>
+
+				<td id="V">
+					<p class="name">Vanadium</p>
+					<p class="masse">50,9415</p>
+					<p class="symbol">V</p>
+					<p class="number">23</p>
+				</td>
+
+				<td id="Cr">
+					<p class="name">Chrome</p>
+					<p class="masse">51,9961</p>
+					<p class="symbol">Cr</p>
+					<p class="number">24</p>
+				</td>
+
+				<td id="Mn">
+					<p class="name">Manganese</p>
+					<p class="masse">54,9380</p>
+					<p class="symbol">Mn</p>
+					<p class="number">25</p>
+				</td>
+
+				<td id="Fe">
+					<p class="name">Fer</p>
+					<p class="masse">55,845</p>
+					<p class="symbol">Fe</p>
+					<p class="number">26</p>
+				</td>
+
+				<td id="Co">
+					<p class="name">Cobalt</p>
+					<p class="masse">58,9332</p>
+					<p class="symbol">Co</p>
+					<p class="number">27</p>
+				</td>
+
+				<td id="Ni">
+					<p class="name">Nickel</p>
+					<p class="masse">58,6934</p>
+					<p class="symbol">Ni</p>
+					<p class="number">28</p>
+				</td>
+
+				<td id="Cu">
+					<p class="name">Cuivre</p>
+					<p class="masse">63,546</p>
+					<p class="symbol">Cu</p>
+					<p class="number">29</p>
+				</td>
+
+				<td id="Zn">
+					<p class="name">Zinc</p>
+					<p class="masse">65,38</p>
+					<p class="symbol">Zn</p>
+					<p class="number">30</p>
+				</td>
+
+				<td id="Ga">
+					<p class="name">Gallium</p>
+					<p class="masse">69,723</p>
+					<p class="symbol">Ga</p>
+					<p class="number">31</p>
+				</td>
+
+				<td id="Ge">
+					<p class="name">Germanium</p>
+					<p class="masse">72,63</p>
+					<p class="symbol">Ge</p>
+					<p class="number">32</p>
+				</td>
+
+				<td id="As">
+					<p class="name">Arsenic</p>
+					<p class="masse">74,9216</p>
+					<p class="symbol">As</p>
+					<p class="number">33</p>
+				</td>
+
+				<td id="Se">
+					<p class="name">Selenium</p>
+					<p class="masse">78,96</p>
+					<p class="symbol">Se</p>
+					<p class="number">34</p>
+				</td>
+
+				<td id="Br">
+					<p class="name">Brome</p>
+					<p class="masse">79,904</p>
+					<p class="symbol">Br</p>
+					<p class="number">35</p>
+				</td>
+
+				<td id="Kr">
+					<p class="name">Krypton</p>
+					<p class="masse">83,798</p>
+					<p class="symbol">Kr</p>
+					<p class="number">36</p>
+				</td>
+
+			</tr>
+			<tr id="ligne5">
+
+				<td id="Rb">
+					<p class="name">Rubidium</p>
+					<p class="masse">85,4678</p>
+					<p class="symbol">Rb</p>
+					<p class="number">37</p>
+				</td>
+
+				<td id="Sr">
+					<p class="name">Strontium</p>
+					<p class="masse">87,62</p>
+					<p class="symbol">Sr</p>
+					<p class="number">38</p>
+				</td>
+
+				<td id="Y">
+					<p class="name">Yttrium</p>
+					<p class="masse">88,9058</p>
+					<p class="symbol">Y</p>
+					<p class="number">39</p>
+				</td>
+
+				<td id="Zr">
+					<p class="name">Zirconium</p>
+					<p class="masse">91,224</p>
+					<p class="symbol">Zr</p>
+					<p class="number">40</p>
+				</td>
+
+				<td id="Nb">
+					<p class="name">Niobium</p>
+					<p class="masse">92,9064</p>
+					<p class="symbol">Nb</p>
+					<p class="number">41</p>
+				</td>
+
+				<td id="Mo">
+					<p class="name">Molybdene</p>
+					<p class="masse">95,96</p>
+					<p class="symbol">Mo</p>
+					<p class="number">42</p>
+				</td>
+
+				<td id="Tc">
+					<p class="name">Technetium</p>
+					<p class="masse">{98}</p>
+					<p class="symbol">Tc</p>
+					<p class="number">43</p>
+				</td>
+
+				<td id="Ru">
+					<p class="name">Ruthemium</p>
+					<p class="masse">101,07</p>
+					<p class="symbol">Ru</p>
+					<p class="number">44</p>
+				</td>
+
+				<td id="Rh">
+					<p class="name">Rhodium</p>
+					<p class="masse">102,905</p>
+					<p class="symbol">Rh</p>
+					<p class="number">45</p>
+				</td>
+
+				<td id="Pd">
+					<p class="name">Palladium</p>
+					<p class="masse">106,42</p>
+					<p class="symbol">Pd</p>
+					<p class="number">46</p>
+				</td>
+
+				<td id="Ag">
+					<p class="name">Argent</p>
+					<p class="masse">107,868</p>
+					<p class="symbol">Ag</p>
+					<p class="number">47</p>
+				</td>
+
+				<td id="Cd">
+					<p class="name">Cadmium</p>
+					<p class="masse">112,411</p>
+					<p class="symbol">Cd</p>
+					<p class="number">48</p>
+				</td>
+
+				<td id="In">
+					<p class="name">Indium</p>
+					<p class="masse">114,818</p>
+					<p class="symbol">In</p>
+					<p class="number">49</p>
+				</td>
+
+				<td id="Sn">
+					<p class="name">Etain</p>
+					<p class="masse">118,71</p>
+					<p class="symbol">Sn</p>
+					<p class="number">50</p>
+				</td>
+
+				<td id="Sb">
+					<p class="name">Antimoine</p>
+					<p class="masse">121,76</p>
+					<p class="symbol">Sb</p>
+					<p class="number">51</p>
+				</td>
+
+				<td id="Te">
+					<p class="name">Tellure</p>
+					<p class="masse">127,6</p>
+					<p class="symbol">Te</p>
+					<p class="number">52</p>
+				</td>
+
+				<td id="I">
+					<p class="name">Iode</p>
+					<p class="masse">126,905</p>
+					<p class="symbol">I</p>
+					<p class="number">53</p>
+				</td>
+
+				<td id="Xe">
+					<p class="name">Xenon</p>
+					<p class="masse">131,293</p>
+					<p class="symbol">Xe</p>
+					<p class="number">54</p>
+				</td>
+
+			</tr>
+			<tr id="ligne6">
+
+				<td id="Cs">
+					<p class="name">Cesium</p>
+					<p class="masse">132,905</p>
+					<p class="symbol">Cs</p>
+					<p class="number">55</p>
+				</td>
+
+				<td id="Ba">
+					<p class="name">Baryum</p>
+					<p class="masse">137,327</p>
+					<p class="symbol">Ba</p>
+					<p class="number">56</p>
+				</td>
+
+				<td class="vide"></td>
+
+				<td id="Hf">
+					<p class="name">Hafnium</p>
+					<p class="masse">178,49</p>
+					<p class="symbol">Hf</p>
+					<p class="number">72</p>
+				</td>
+
+				<td id="Ta">
+					<p class="name">Tantale</p>
+					<p class="masse">180,948</p>
+					<p class="symbol">Ta</p>
+					<p class="number">73</p>
+				</td>
+
+				<td id="W">
+					<p class="name">Tungstene</p>
+					<p class="masse">183,84</p>
+					<p class="symbol">W</p>
+					<p class="number">74</p>
+				</td>
+
+				<td id="Re">
+					<p class="name">Rhenium</p>
+					<p class="masse">186,207</p>
+					<p class="symbol">Re</p>
+					<p class="number">75</p>
+				</td>
+
+				<td id="Os">
+					<p class="name">Osmium</p>
+					<p class="masse">190,23</p>
+					<p class="symbol">Os</p>
+					<p class="number">76</p>
+				</td>
+
+				<td id="Ir">
+					<p class="name">Iridium</p>
+					<p class="masse">192,217</p>
+					<p class="symbol">Ir</p>
+					<p class="number">77</p>
+				</td>
+
+				<td id="Pt">
+					<p class="name">Platine</p>
+					<p class="masse">195,084</p>
+					<p class="symbol">Pt</p>
+					<p class="number">78</p>
+				</td>
+
+				<td id="Au">
+					<p class="name">Or</p>
+					<p class="masse">196,967</p>
+					<p class="symbol">Au</p>
+					<p class="number">79</p>
+				</td>
+
+				<td id="Hg">
+					<p class="name">Mercure</p>
+					<p class="masse">200,59</p>
+					<p class="symbol">Hg</p>
+					<p class="number">80</p>
+				</td>
+
+				<td id="Tl">
+					<p class="name">Thallium</p>
+					<p class="masse">204,383</p>
+					<p class="symbol">Tl</p>
+					<p class="number">81</p>
+				</td>
+
+				<td id="Pb">
+					<p class="name">Plomb</p>
+					<p class="masse">207,2</p>
+					<p class="symbol">Pb</p>
+					<p class="number">82</p>
+				</td>
+
+				<td id="Bi">
+					<p class="name">Bismuth</p>
+					<p class="masse">208,98</p>
+					<p class="symbol">Bi</p>
+					<p class="number">83</p>
+				</td>
+
+				<td id="Po">
+					<p class="name">Polonium</p>
+					<p class="masse">{209}</p>
+					<p class="symbol">Po</p>
+					<p class="number">84</p>
+				</td>
+
+				<td id="At">
+					<p class="name">Astate</p>
+					<p class="masse">{210}</p>
+					<p class="symbol">At</p>
+					<p class="number">85</p>
+				</td>
+
+				<td id="Rn">
+					<p class="name">Radon</p>
+					<p class="masse">{222}</p>
+					<p class="symbol">Rn</p>
+					<p class="number">86</p>
+				</td>
+
+			</tr>
+			<tr id="ligne7">
+
+				<td id="Fr">
+					<p class="name">Francium</p>
+					<p class="masse">{223}</p>
+					<p class="symbol">Fr</p>
+					<p class="number">87</p>
+				</td>
+
+				<td id="Ra">
+					<p class="name">Radium</p>
+					<p class="masse">{226}</p>
+					<p class="symbol">Ra</p>
+					<p class="number">88</p>
+				</td>
+
+				<td class="vide"></td>
+
+				<td id="Rf">
+					<p class="name">Rutherfordium</p>
+					<p class="masse">{266}</p>
+					<p class="symbol">Rf</p>
+					<p class="number">104</p>
+				</td>
+
+				<td id="Db">
+					<p class="name">Dubnium</p>
+					<p class="masse">{268}</p>
+					<p class="symbol">Db</p>
+					<p class="number">105</p>
+				</td>
+
+				<td id="Sg">
+					<p class="name">Seaborgium</p>
+					<p class="masse">{269}</p>
+					<p class="symbol">Sg</p>
+					<p class="number">106</p>
+				</td>
+
+				<td id="Bh">
+					<p class="name">Bohrium</p>
+					<p class="masse">{270}</p>
+					<p class="symbol">Bh</p>
+					<p class="number">107</p>
+				</td>
+
+				<td id="Hs">
+					<p class="name">Hassium</p>
+					<p class="masse">{269}</p>
+					<p class="symbol">Hs</p>
+					<p class="number">108</p>
+				</td>
+
+				<td id="Mt">
+					<p class="name">Meitnerium</p>
+					<p class="masse">{278}</p>
+					<p class="symbol">Mt</p>
+					<p class="number">109</p>
+				</td>
+
+				<td id="Ds">
+					<p class="name">Darmstadium</p>
+					<p class="masse">{279}</p>
+					<p class="symbol">Ds</p>
+					<p class="number">110</p>
+				</td>
+
+				<td id="Rg">
+					<p class="name">Roentgenium</p>
+					<p class="masse">{281}</p>
+					<p class="symbol">Rg</p>
+					<p class="number">111</p>
+				</td>
+
+				<td id="Cn">
+					<p class="name">Copernicium</p>
+					<p class="masse">{285}</p>
+					<p class="symbol">Cn</p>
+					<p class="number">112</p>
+				</td>
+
+				<td id="Uut">
+					<p class="name">Ununtrium</p>
+					<p class="masse">{284}</p>
+					<p class="symbol">Uut</p>
+					<p class="number">113</p>
+				</td>
+
+				<td id="Uuq">
+					<p class="name">Ununquadium</p>
+					<p class="masse">{289}</p>
+					<p class="symbol">Uuq</p>
+					<p class="number">114</p>
+				</td>
+
+				<td id="Uup">
+					<p class="name">Ununpentium</p>
+					<p class="masse">{288}</p>
+					<p class="symbol">Uup</p>
+					<p class="number">115</p>
+				</td>
+
+				<td id="Uuh">
+					<p class="name">Ununhexium</p>
+					<p class="masse">{293}</p>
+					<p class="symbol">Uuh</p>
+					<p class="number">116</p>
+				</td>
+
+				<td id="Uus">
+					<p class="name">Ununseptium</p>
+					<p class="masse">{294}</p>
+					<p class="symbol">Uus</p>
+					<p class="number">117</p>
+				</td>
+
+				<td id="Uuo">
+					<p class="name">Ununoctium</p>
+					<p class="masse">{294}</p>
+					<p class="symbol">Uuo</p>
+					<p class="number">118</p>
+				</td>
+
+			</tr>
+			<tr class="vide" id="ligne8">
+
+				<td class="vide">
+					<p><br /></p>
+				</td>
+
+			</tr>
+			<tr id="ligne9">
+
+				<td class="vide" colspan="3"></td>
+
+				<td id="La">
+					<p class="name">Lanthane</p>
+					<p class="masse">138,906</p>
+					<p class="symbol">La</p>
+					<p class="number">57</p>
+				</td>
+
+				<td id="Ce">
+					<p class="name">Cerium</p>
+					<p class="masse">140,116</p>
+					<p class="symbol">Ce</p>
+					<p class="number">58</p>
+				</td>
+
+				<td id="Pr">
+					<p class="name">Praseodyme</p>
+					<p class="masse">140,908</p>
+					<p class="symbol">Pr</p>
+					<p class="number">59</p>
+				</td>
+
+				<td id="Nd">
+					<p class="name">Neodyme</p>
+					<p class="masse">144,242</p>
+					<p class="symbol">Nd</p>
+					<p class="number">60</p>
+				</td>
+
+				<td id="Pm">
+					<p class="name">Promethium</p>
+					<p class="masse">{145}</p>
+					<p class="symbol">Pm</p>
+					<p class="number">61</p>
+				</td>
+
+				<td id="Sm">
+					<p class="name">Samarium</p>
+					<p class="masse">150,36</p>
+					<p class="symbol">Sm</p>
+					<p class="number">62</p>
+				</td>
+
+				<td id="Eu">
+					<p class="name">Europium</p>
+					<p class="masse">151,964</p>
+					<p class="symbol">Eu</p>
+					<p class="number">63</p>
+				</td>
+
+				<td id="Gd">
+					<p class="name">Gadolinium</p>
+					<p class="masse">157,25</p>
+					<p class="symbol">Gd</p>
+					<p class="number">64</p>
+				</td>
+
+				<td id="Tb">
+					<p class="name">Terbium</p>
+					<p class="masse">158,925</p>
+					<p class="symbol">Tb</p>
+					<p class="number">65</p>
+				</td>
+
+				<td id="Dy">
+					<p class="name">Dysprosium</p>
+					<p class="masse">162,5</p>
+					<p class="symbol">Dy</p>
+					<p class="number">66</p>
+				</td>
+
+				<td id="Ho">
+					<p class="name">Holmium</p>
+					<p class="masse">164,930</p>
+					<p class="symbol">Ho</p>
+					<p class="number">67</p>
+				</td>
+
+				<td id="Er">
+					<p class="name">Erbium</p>
+					<p class="masse">167,259</p>
+					<p class="symbol">Er</p>
+					<p class="number">68</p>
+				</td>
+
+				<td id="Tm">
+					<p class="name">Thulium</p>
+					<p class="masse">168,934</p>
+					<p class="symbol">Tm</p>
+					<p class="number">69</p>
+				</td>
+
+				<td id="Yb">
+					<p class="name">Ytterbium</p>
+					<p class="masse">173,054</p>
+					<p class="symbol">Yb</p>
+					<p class="number">70</p>
+				</td>
+
+				<td id="Lu">
+					<p class="name">Lutecium</p>
+					<p class="masse">174,967</p>
+					<p class="symbol">Lu</p>
+					<p class="number">71</p>
+				</td>
+
+			</tr>
+			<tr id="ligne10">
+
+				<td class="vide" colspan="3"></td>
+
+				<td id="Ac">
+					<p class="name">Actinium</p>
+					<p class="masse">{227}</p>
+					<p class="symbol">Ac</p>
+					<p class="number">89</p>
+				</td>
+
+				<td id="Th">
+					<p class="name">Thorium</p>
+					<p class="masse">232,038</p>
+					<p class="symbol">Th</p>
+					<p class="number">90</p>
+				</td>
+
+				<td id="Pa">
+					<p class="name">Protactinium</p>
+					<p class="masse">231,036</p>
+					<p class="symbol">Pa</p>
+					<p class="number">91</p>
+				</td>
+
+				<td id="U">
+					<p class="name">Uranium</p>
+					<p class="masse">238,036</p>
+					<p class="symbol">U</p>
+					<p class="number">92</p>
+				</td>
+
+				<td id="Np">
+					<p class="name">Neptunium</p>
+					<p class="masse">{237}</p>
+					<p class="symbol">Np</p>
+					<p class="number">93</p>
+				</td>
+
+				<td id="Pu">
+					<p class="name">Plutonium</p>
+					<p class="masse">{244}</p>
+					<p class="symbol">Pu</p>
+					<p class="number">94</p>
+				</td>
+
+				<td id="Am">
+					<p class="name">Americium</p>
+					<p class="masse">{243}</p>
+					<p class="symbol">Am</p>
+					<p class="number">95</p>
+				</td>
+
+				<td id="Cm">
+					<p class="name">Curium</p>
+					<p class="masse">{247}</p>
+					<p class="symbol">Cm</p>
+					<p class="number">96</p>
+				</td>
+
+				<td id="Bk">
+					<p class="name">Berkelium</p>
+					<p class="masse">{247}</p>
+					<p class="symbol">Bk</p>
+					<p class="number">97</p>
+				</td>
+
+				<td id="Cf">
+					<p class="name">Californium</p>
+					<p class="masse">{251}</p>
+					<p class="symbol">Cf</p>
+					<p class="number">98</p>
+				</td>
+
+				<td id="Es">
+					<p class="name">Einsteinium</p>
+					<p class="masse">{252}</p>
+					<p class="symbol">Es</p>
+					<p class="number">99</p>
+				</td>
+
+				<td id="Fm">
+					<p class="name">Fermium</p>
+					<p class="masse">{258}</p>
+					<p class="symbol">Fm</p>
+					<p class="number">100</p>
+				</td>
+
+				<td id="Md">
+					<p class="name">Mendelevium</p>
+					<p class="masse">{259}</p>
+					<p class="symbol">Md</p>
+					<p class="number">101</p>
+				</td>
+
+				<td id="No">
+					<p class="name">Nobelium</p>
+					<p class="masse">{259}</p>
+					<p class="symbol">No</p>
+					<p class="number">102</p>
+				</td>
+
+				<td id="Lr">
+					<p class="name">Lawrencium</p>
+					<p class="masse">{262}</p>
+					<p class="symbol">Lr</p>
+					<p class="number">103</p>
+				</td>
+
+			</tr>
+		</table>
+		<img src="http://ekladata.com/PNpY1-bEe_wlAYyhtE_VJOoqETw.jpg" />
+	</body>
+</html>
