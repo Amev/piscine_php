@@ -6,7 +6,7 @@
 <!-- By: vame <vame@student.42.fr>                  +#+  +:+       +#+       -->
 <!--                                              +#+#+#+#+#+   +#+          -->
 <!-- Created: 2015/04/06 18:20:35 by vame              #+#    #+#            -->
-<!-- Updated: 2015/04/06 18:20:37 by vame             ###   ########.fr      -->
+<!-- Updated: 2015/04/07 13:37:15 by vame             ###   ########.fr      -->
 <!--                                                                         -->
 <!-- *********************************************************************** -->
 
@@ -19,14 +19,10 @@
     </head>
     <body>
         <header>
-            <img src="resources/day_of_the_42.png" title"Day of the 42" class="ban" id="banniere"/>
-            <img src="resources/loupe.png" title"Day of the 42" class="ban" id="loupe"/>
-            <a href="http://www.disney.com">
-                <img src="resources/reload.png" title"Day of the 42" class="ban" id="reload"/>
-            </a>
-            <a href="http://www.relaischateaux.com">
-                <img src="resources/close.gif" title"Day of the 42" class="ban" id="croix"/>
-            </a>
+            <img src="resources/day_of_the_42.png" title="Day of the 42" class="ban" id="banniere" alt="Day of the 42" />
+            <img src="resources/loupe.png" title="Loupe" class="ban" id="loupe" alt="Loupe" />
+            <a href="http://www.disney.com"><img src="resources/reload.png" title="Disney" class="ban" id="reload" alt="Disney" /></a>
+            <a href="http://www.relaischateaux.com"><img src="resources/close.gif" title="Chateaux" class="ban" id="croix" alt="Chateaux"/></a>
         </header>
         <section id="content">
             <div id="left">
@@ -36,8 +32,8 @@
                 <div class="menu">
                     <img src="resources/main.png" class="menu_img" title="Prendre" alt="Prendre" />
                 </div>
-                <div class="menu">
-                    <img src="resources/oeil.png" class="menu_img" id="oeil" title="Regarder" alt="Regarder" />
+                <div class="menu" id="oeil">
+                    <img src="resources/oeil.png" class="menu_img" title="Regarder" alt="Regarder" />
                 </div>
                 <div class="menu">
                     <img src="resources/outil.png" class="menu_img" title="Utiliser" alt="Utiliser" />
@@ -50,16 +46,21 @@
                 <img src="resources/cluster.jpg" class="center" title="Cluster" alt="Cluster" />
             </article>
             <aside>
-                <div class="aside">
+                <div class="aside" id="lire">
                     <img src="resources/book.png" class="aside_img" title="Lire" alt="Lire" />
                 </div>
-                <div class="aside">
+                <div class="aside" id="laver">
                     <img src="resources/towel.png" class="aside_img" title="Laver" alt="Laver" />
                 </div>
-                <div class="aside">
-                    <img src="resources/brick.jpg" class="aside_img" id="brick" title="Mur" alt="Mur" />
+                <div class="aside" id="brick" title="Mur" alt="Mur">
                 </div>
             </aside>
         </section>
+		<div id="box">
+			<p>Vous <em>entrez</em> alors dans une piece remplie d'<strong>ordinateurs</strong>...</p>
+			<p><i>- Bonjour, vous êtes nouveau ici ?</i></p>
+			<input type="text" id="input" />
+			<input type="submit" id="button" value="Repondre" />
+		</div>
     </body>
 </html>
