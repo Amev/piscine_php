@@ -2,8 +2,9 @@
 <?php
 function ft_split($str)
 {
+	$str = str_replace("\t", " ", $str);
 	$str = explode(" ", $str);
-	$str = array_filter($str);
+	$str = array_filter($str, "strlen");
 	$str = implode(" ", $str);
 	$str = explode(" ", $str);
 	return $str;

@@ -10,7 +10,7 @@ while (1)
 		echo "\n";
 		break;
 	}
-	if (is_numeric($buff) == FALSE)
+	if (is_numeric($buff) == FALSE || strpos($buff, ".") !== FALSE)
 		echo "'$buff' n'est pas un chiffre\n";
 	else if ($buff % 2 == 0)
 		echo "Le chiffre $buff est Pair\n";

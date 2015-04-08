@@ -9,10 +9,13 @@ function tolower($c)
 }
 function cmp_modif($a, $b)
 {
+	$i = 0;
 	if ($a == $b)
 		return 0;
-	$a = tolower($a);
-	$b = tolower($b);
+	while ($a[$i] && $a[$i] == $b[$i])
+		$i++;
+	$a = tolower($a[$i]);
+	$b = tolower($b[$i]);
 	$a = ord($a);
 	$b = ord($b);
 	if ($a >= 48 && $a <= 57)
@@ -31,7 +34,7 @@ $tab = array();
 
 while ($i < $argc)
 	$tab = array_merge($tab, explode(" ", $argv[$i++]));
-$tab = array_filter($tab);
+$tab = array_filter($tab, "strlen");
 usort($tab, "cmp_modif");
 $i = 0;
 $len = count($tab);
