@@ -1,5 +1,13 @@
 #!/usr/bin/php
 <?php
+
+function ft_split($str) {
+	$str = str_replace("\t", " ", $str);
+	$str = explode(" ", $str);
+	$str = array_filter($str, "strlen");
+	return $str;
+}
+
 function tolower($c)
 {
 	$ascii = ord($c);
@@ -7,10 +15,25 @@ function tolower($c)
 		$ascii = $ascii + 32;
 	return chr($ascii);
 }
+
+function tolower_str($str) {
+	$i = 0;
+	$dst = $str;
+	$len = strlen($str);
+
+	while ($i < $len) {
+		$dst[$i] = tolower($str[$i]);
+		$i++;
+	}
+	return ($dst);
+}
+
 function cmp_modif($a, $b)
 {
 	$i = 0;
-	if ($a == $b)
+	$a = tolower_str($a);
+	$b = tolower_str($b);
+	if (!strcmp($a, $b))
 		return 0;
 	while ($a[$i] && $a[$i] == $b[$i])
 		$i++;
@@ -28,12 +51,15 @@ function cmp_modif($a, $b)
 		$b = $b + 10000;
 	return ($a < $b) ? -1 : 1;
 }
+
 $i = 1;
 $len = 0;
 $tab = array();
 
-while ($i < $argc)
-	$tab = array_merge($tab, explode(" ", $argv[$i++]));
+while ($i < $argc) {
+	$tmp = ft_split($argv[$i++]);
+	$tab = array_merge($tab, $tmp);
+}
 $tab = array_filter($tab, "strlen");
 usort($tab, "cmp_modif");
 $i = 0;
