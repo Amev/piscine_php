@@ -6,19 +6,28 @@ function ft_replace_link($str, $i) {
 	while ($str[$i] != '>')
 		$i++;
 	$i++;
-	while ($str[$i] != '<') {
-		$ascii = ord($str[$i]);
-		if ($ascii >= 97 && $ascii <= 122) {
-			$str[$i] = chr($ascii - 32);
+	$tmp = substr($str, $i);
+	while (strlen($tmp) && !preg_match("#^</a>#", $tmp)) {
+		while ($str[$i] != '<') {
+			$ascii = ord($str[$i]);
+			if ($ascii >= 97 && $ascii <= 122) {
+				$str[$i] = chr($ascii - 32);
+			}
+			$i++;
 		}
-		$i++;
+		$tmp = substr($str, $i);
+		if (preg_match("#^</a>#", $tmp))
+			break;
+		while ($str[$i] != '>')
+			$i++;
+		$tmp = substr($str, $i - 1);
 	}
 	return ($str);
 }
 
 function ft_replace_title($str, $i) {
 	$tmp = substr($str, $i);
-	while (!preg_match("#^title=\".*\"#", $tmp)) {
+	while (!preg_match("#^title=\".*\"#s", $tmp)) {
 		$i++;
 		$tmp = substr($str, $i);
 	}
@@ -40,10 +49,10 @@ if ($argc > 1) {
 	$len = strlen($str);
 	while ($i < $len) {
 		$tmp = substr($str, $i);
-		if (preg_match("#^<a.*>.*</a>#", $tmp)) {
+		if (preg_match("#^<a.*>.*</a>#s", $tmp)) {
 			$str = ft_replace_link($str, $i);
 		}
-		if (preg_match("#^<[^>]* title=\".*\".*>#", $tmp)) {
+		if (preg_match("#^<[^>]* title=\".*\".*>#s", $tmp)) {
 			$str = ft_replace_title($str, $i);
 		}
 		$i++;
