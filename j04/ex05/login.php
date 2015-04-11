@@ -14,7 +14,7 @@ if ($_POST["submit"] !== "OK" || $_POST["login"] === "" || $_POST["passwd"] === 
 	echo "ERROR\n";
 else {
 	if (auth($_POST["login"], $_POST["passwd"]) === TRUE) {
-		$_SESSION["loggued_on_user"] = $_GET["login"];
+		$_SESSION["loggued_on_user"] = $_POST["login"];
 		iframe();
 	}
 	else {

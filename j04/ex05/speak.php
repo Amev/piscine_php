@@ -5,8 +5,8 @@ session_start();
 if ($_SESSION["loggued_on_user"] === "") {
 	header("Location: .");
 }
-echo $_POST["msg"];
-if ($_POST["msg"] && $_POST["msg"] !== "") {
+
+if ($_POST && $_POST["msg"] && $_POST["msg"] !== "") {
 	$msg = array("login" => $_SESSION["loggued_on_user"], "time" => time(), "msg" => $_POST["msg"]);
 	$file = "../private/chat";
 	$fd = fopen($file);
@@ -19,7 +19,6 @@ if ($_POST["msg"] && $_POST["msg"] !== "") {
 	file_put_contents($file, $content);
 	$flock = flock($fd, LOCK_UN);
 	fclose($fd);
-	echo $content."\n";
 }
 
 ?>
@@ -28,7 +27,7 @@ if ($_POST["msg"] && $_POST["msg"] !== "") {
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Creation de compte</title>
+		<title>Messqge box</title>
 		<style>
 			input {
 				display: inline-block;
