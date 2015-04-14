@@ -1,0 +1,18 @@
+
+<- Vertex ----------------------------------------------------------------------
+The Vertex class defines a vertex with its x, y, z and w coordonates and its
+color.
+
+An instance can be constructed from an array whith this keys (values are just
+for example) :
+new Vertex(array('x' => 2.00, 'y' => 0, 'z' => -1.50, 'w' => 1.0, $color));
+
+Where $color is an instance of class Color. 'w' and 'color' are optional.
+Default value for w is 1.0 and color white (0xFFFFFF) for color.
+
+The class provides the following methods :
+
+A function set for each variable to change its value.
+
+A function get for each variable to get its value.
+---------------------------------------------------------------------- Vertex ->
