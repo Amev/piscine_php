@@ -89,7 +89,7 @@ class Color {
 		return $color;
 	}
 
-	public function mult($f) {
+	public function mult(float $f) {
 
 		$r = intval($this->red * $f);
 		$b = intval($this->blue * $f);
