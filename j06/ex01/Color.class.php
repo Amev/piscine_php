@@ -63,52 +63,43 @@ class Color {
 		return file_get_contents("Color.doc.txt");
 	}
 
-	public function add(Color $b) {
+	public function add(Color $rhs) {
 
-		$c = clone $this;
-		$c->red = $this->red + $b->red;
-		$c->blue = $this->blue + $b->blue;
-		$c->green = $this->green + $b->green;
-		//$c->red = $c->red > 255 ? 255 : $c->red;
-		//$c->blue = $c->blue > 255 ? 255 : $c->blue;
-		//$c->green = $c->green > 255 ? 255 : $c->green;
+		$r = $this->red + $rhs->red;
+		$b = $this->blue + $rhs->blue;
+		$g = $this->green + $rhs->green;
+		//$r = $r > 255 ? 255 : $r;
+		//$b = $b > 255 ? 255 : $b;
+		//$g = $g > 255 ? 255 : $g;
 
-		if (self::$verbose === TRUE) {
-			print($c . ' constructed.' . PHP_EOL);
-		}
-		return $c;
+		$color = new Color(array("red" => $r, "green" => $g, "blue" => $b));
+		return $color;
 	}
 
-	public function sub(Color $b) {
+	public function sub(Color $rhs) {
 
-		$c = clone $this;
-		$c->red = $this->red - $b->red;
-		$c->blue = $this->blue - $b->blue;
-		$c->green = $this->green - $b->green;
-		//$c->red = $c->red < 0 ? 0 : $c->red;
-		//$c->blue = $c->blue < 0 ? 0 : $c->blue;
-		//$c->green = $c->green < 0 ? 0 : $c->green;
+		$r = $this->red - $rhs->red;
+		$b = $this->blue - $rhs->blue;
+		$g = $this->green - $rhs->green;
+		//$r = $r < 0 ? 0 : $r;
+		//$b = $b < 0 ? 0 : $b;
+		//$g = $g < 0 ? 0 : $g;
 
-		if (self::$verbose === TRUE) {
-			print($c . ' constructed.' . PHP_EOL);
-		}
-		return $c;
+		$color = new Color(array("red" => $r, "green" => $g, "blue" => $b));
+		return $color;
 	}
 
-	public function mult($b) {
+	public function mult($f) {
 
-		$c = clone $this;
-		$c->red = intval($this->red * $b);
-		$c->blue = intval($this->blue * $b);
-		$c->green = intval($this->green * $b);
-		//$c->red = ($c->red > 255) ? 255 : (($c->red < 0) ? 0 : $c->red);
-		//$c->blue = ($c->blue > 255) ? 255 : (($c->blue < 0) ? 0 : $c->blue);
-		//$c->green = ($c->green > 255) ? 255 : (($c->green < 0) ? 0 : $c->green);
+		$r = intval($this->red * $f);
+		$b = intval($this->blue * $f);
+		$g = intval($this->green * $f);
+		//$r = ($r > 255) ? 255 : (($r < 0) ? 0 : $r);
+		//$b = ($b > 255) ? 255 : (($b < 0) ? 0 : $b);
+		//$g = ($g > 255) ? 255 : (($g < 0) ? 0 : $g);
 
-		if (self::$verbose === TRUE) {
-			print($c . ' constructed.' . PHP_EOL);
-		}
-		return $c;
+		$color = new Color(array("red" => $r, "green" => $g, "blue" => $b));
+		return $color;
 	}
 }
 

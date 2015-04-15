@@ -1,0 +1,41 @@
+
+<- Vector ----------------------------------------------------------------------
+The Vector class defines a vector whith its x, y, z and w components. This
+values are calculated from 2 Vertex object (see Vertex documentation).
+
+An instance can be constructed from a array with this keys :
+new Vector(array("dest" => vertex1 [, "orig" => vertex2]));
+
+Where vertex1 and vertex2 are two instances of the Vertex's class. Vertex2 is
+optionnal, its default value is a vertex with x=0, y=0, z=0 and w=1.
+
+The class provides read only accessors and the following methods :
+
+float magnitude();
+Returns the magnitude of vector.
+
+Vector normalize();
+Returns the normalized vector of instance in a new instance of Vector;
+
+Vector add(Vector $rhs);
+Add vectors and returns the new vector in a new instance of Vector;
+
+Vector sub(Vector $rhs);
+Sub vectors and returns the new vector in a new instance of Vector;
+
+Vector opposite();
+Returns the opposite of current vector in a new instance of Vector;
+
+Vector scalarProduct($k);
+Returns the dot product between current vector and a scalar in a new instance
+of Vector;
+
+Vector dotProduct(Vector $rhs);
+Returns the dot product betwen the 2 vectors;
+
+Vector cos(Vector $rhs);
+Returns the cos between the 2 vectors;
+
+Vector crossProduct(Vector $rhs);
+Returns the cross product between ths 2 vectors in a new instance of Vector;
+---------------------------------------------------------------------- Vector ->
