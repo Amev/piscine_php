@@ -2,7 +2,7 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Map.Class.php                                      :+:      :+:    :+:    #
+#    D6.Class.php                                       :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: vame <vame@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
@@ -11,35 +11,16 @@
 #                                                                              #
 # **************************************************************************** #
 
-class Map {
+class D6 {
 
-	private int $_width;
-	private int $_height;
-	private array $_ships;
-
-	public array function getShips() { return $this->_ships; }
-	public array function getWidth() { return $this->_width; }
-	public array function getHeight() { return $this->_height; }
+	private int $_result;
+	
+	public int function getResult() { return $this->_result; }
 
 	public function __construct() {
 
-		$this->_width = 150;
-		$this->_height = 100;
-		$this->_ships = $this->create_ships();
-
+		$this->_result = rand(1, 6);
 		return;
-	}
-
-	private array function create_ships() {
-
-		$player = 0;
-		$ships = array();
-		while ($player < 2) {
-
-			array_push($ships, new Ship($player, 0));
-		}
-
-		return $ships;
 	}
 
 	public function __destruct() {
@@ -49,8 +30,6 @@ class Map {
 
 	public static function doc() {
 
-		return file_get_contents("../docs/Map.doc.txt");
+		return file_get_contents("../docs/D6.doc.txt");
 	}
 }
-
-?>
