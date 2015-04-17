@@ -45,9 +45,19 @@ abstract class Ship {
 
 		if ($player === 0) {
 			
-			$this->xPos = 4;
-			$this->yPos = $index * 3 + 2;
+			$this->_xPos = 4;
+			$this->_yPos = $index * 3 + 2;
 		}
-		else if ($player
+		else if ($player === 1) {
+
+			$this->_xPos = 145;
+			$this->_yPos = 97 - $index * 3;
+		}
+
+		$this->_shield = 0;
+		$this->_hp = 5;
+		$this->_hsens = TRUE;
+
+		return;
 	}
 }
