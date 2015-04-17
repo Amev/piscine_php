@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Balloon !</title>
+		<style>
+
+			body {
+				margin: 0px;
+				padding: 0px;
+			}
+
+			#balloon {
+				margin: auto;
+				margin-top: 40vh;
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				border-radius: 200px;
+			}
+
+		</style>
+		<script>
+			function change_balloon() {
+
+				var color = $('#balloon').css("background-color");
+				var size = $('#balloon').css("width");
+				var margin = $('#balloon').css("margin-top");
+				var new_size = parseInt(size) + 10;
+				var new_margin = parseInt(margin) - 5;
+
+				if (color == "rgb(255, 0, 0)") {
+					$('#balloon').css("background-color", "#00FF00");
+				}
+				else if (color == "rgb(0, 255, 0)") {
+					$('#balloon').css("background-color", "#0000FF");
+				}
+				else if (color == "rgb(0, 0, 255)") {
+					$('#balloon').css("background-color", "#FF0000");
+				}
+
+				if (new_size > 420) {
+					$("#balloon").css("width", "200px");
+					$("#balloon").css("height", "200px");
+					$("#balloon").css("border-radius", "200px");
+					$("#balloon").css("margin-top", "40vh");
+				}
+				else {
+					$("#balloon").css("width", new_size + "px");
+					$("#balloon").css("height", new_size + "px");
+					$("#balloon").css("border-radius", new_size + "px");
+					$("#balloon").css("margin-top", new_margin + "px");
+				}
+			}
+
+			function reduce_balloon() {
+
+				var color = $('#balloon').css("background-color");
+				var size = $('#balloon').css("width");
+				var margin = $('#balloon').css("margin-top");
+				var new_size = parseInt(size) - 5;
+				var new_margin = parseInt(margin) + 2.5;
+
+				if (color == "rgb(255, 0, 0)") {
+					$('#balloon').css("background-color", "#0000FF");
+				}
+				else if (color == "rgb(0, 255, 0)") {
+					$('#balloon').css("background-color", "#FF0000");
+				}
+				else if (color == "rgb(0, 0, 255)") {
+					$('#balloon').css("background-color", "#00FF00");
+				}
+
+				if (new_size < 200) {
+					$("#balloon").css("width", "200px");
+					$("#balloon").css("height", "200px");
+					$("#balloon").css("border-radius", "200px");
+				}
+				else {
+					$("#balloon").css("width", new_size + "px");
+					$("#balloon").css("height", new_size + "px");
+					$("#balloon").css("border-radius", new_size + "px");
+					$("#balloon").css("margin-top", new_margin + "px");
+				}
+			}
+
+		</script>
+	</head>
+	<body>
+		<div id="balloon" onclick="change_balloon()" onmouseout="reduce_balloon()">
+		</div>
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	</body>
+</html>

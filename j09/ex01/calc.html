@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>It's over 9000 !</title>
+		<style>
+
+			body {
+				margin: 0px;
+				padding: 0px;
+			}
+
+		</style>
+		<script>
+			function calc(){
+
+				var left = document.calc.left.value;
+				var right = document.calc.right.value;
+				var op = document.calc.op.value;
+
+				if (parseInt(left) != left || parseInt(right) != right) {
+					console.log('Error :(');
+					alert('Error :(');
+				}
+				else {
+					left = parseInt(left);
+					right = parseInt(right);
+					if (left < 0 || right < 0 || isNaN(left) || isNaN(right)) {
+						console.log('Error :(');
+						alert('Error :(');
+					}
+					else if (op == '+') {
+						console.log(left + right);
+						alert(left + right);
+					}
+					else if (op == '-') {
+						console.log(left - right);
+						alert(left - right);
+					}
+					else if (op == '*') {
+						console.log(left * right);
+						alert(left * right);
+					}
+					else if (op == '/') {
+						if (right == 0) {
+							console.log("It's over 9000 !");
+							alert("It's over 9000 !");
+						}
+						else {
+							console.log(left / right);
+							alert(left / right);
+						}
+					}
+					else if (op == '%') {
+						if (right == 0) {
+							console.log("It's over 9000 !");
+							alert("It's over 9000 !");
+						}
+						else {
+							console.log(left % right);
+							alert(left % right);
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form name="calc" method="post" action="javascript:calc()">
+			<input type="text" name="left" />
+			<select name="op">
+				<option value="+">+</option>
+				<option value="-">-</option>
+				<option value="*">*</option>
+				<option value="/">/</option>
+				<option value="%">%</option>
+			</select>
+			<input type="text" name="right" />
+			<input type="submit" name="submit" value="Try me!" />
+		</form>
+		<script>
+			setInterval(function () {
+				alert("Please, use me...");
+			}, 30000);
+		</script>
+	</body>
+</html>

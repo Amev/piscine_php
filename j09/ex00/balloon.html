@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Balloon !</title>
+		<style>
+
+			body {
+				margin: 0px;
+				padding: 0px;
+			}
+
+			#balloon {
+				margin: auto;
+				margin-top: 40vh;
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				border-radius: 200px;
+			}
+
+		</style>
+		<script>
+			function change_balloon() {
+
+				var balloon = document.getElementById('balloon');
+				var style= window.getComputedStyle(balloon);
+				var color = style.getPropertyValue("background-color");
+				var size = style.getPropertyValue("width");
+				var margin = style.getPropertyValue("margin-top");
+				var new_size = parseInt(size) + 10;
+				var new_margin = parseInt(margin) - 5;
+
+				if (color == "rgb(255, 0, 0)") {
+					balloon.style.backgroundColor = "#00FF00";
+				}
+				else if (color == "rgb(0, 255, 0)") {
+					balloon.style.backgroundColor = "#0000FF";
+				}
+				else if (color == "rgb(0, 0, 255)") {
+					balloon.style.backgroundColor = "#FF0000";
+				}
+
+				if (new_size > 420) {
+					balloon.style.width = "200px";
+					balloon.style.height = "200px";
+					balloon.style.borderRadius = "200px";
+					balloon.style.marginTop = "40vh";
+				}
+				else {
+					balloon.style.width = new_size + "px";
+					balloon.style.height = new_size + "px";
+					balloon.style.borderRadius = new_size + "px";
+					balloon.style.marginTop = new_margin + "px";
+				}
+			}
+
+			function reduce_balloon() {
+
+				var balloon = document.getElementById('balloon');
+				var style= window.getComputedStyle(balloon);
+				var color = style.getPropertyValue("background-color");
+				var size = style.getPropertyValue("width");
+				var margin = style.getPropertyValue("margin-top");
+				var new_size = parseInt(size) - 5;
+				var new_margin = parseInt(margin) + 2.5;
+
+				if (color == "rgb(255, 0, 0)") {
+					balloon.style.backgroundColor = "#0000FF";
+				}
+				else if (color == "rgb(0, 255, 0)") {
+					balloon.style.backgroundColor = "#FF0000";
+				}
+				else if (color == "rgb(0, 0, 255)") {
+					balloon.style.backgroundColor = "#00FF00";
+				}
+
+				if (new_size < 200) {
+					balloon.style.width = "200px";
+					balloon.style.height = "200px";
+					balloon.style.borderRadius = "200px";
+				}
+				else {
+					balloon.style.width = new_size + "px";
+					balloon.style.height = new_size + "px";
+					balloon.style.borderRadius = new_size + "px";
+					balloon.style.marginTop = new_margin + "px";
+				}
+			}
+
+		</script>
+	</head>
+	<body>
+		<div id="balloon" onclick="change_balloon()" onmouseout="reduce_balloon()">
+		</div>
+	</body>
+</html>
